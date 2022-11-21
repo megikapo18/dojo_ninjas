@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="container m-5 d-flex bg-dark ">
+    <div class="ms-5 p-5 text-white  border border-info" style=" margin-left: 350px  " >
+    <h1 class="text-info " >NEW NINJA</h1>
+    <form action="/create_ninja" method="post">
+        <label for="name" > Dojo :</label>
+        <select name="dojo_id"> 
+            {% for dojo in dojos %}
+            <option value="{{dojo.id}}">{{dojo.name}}</option>
+            {% endfor %}
+        </select><br>
+        <label for="name" > First Name:</label>
+        <input type="text" name="first_name" placeholder="Enter ninja name" ><br>
+        <label for="name" > Last Name:</label>
+        <input type="text" name="last_name" placeholder="Enter ninja last name" ><br>
+        <label for="name" > Age:</label>
+        <input type="number" name="age" placeholder="Enter ninja age" ><br>
+        <button class="btn btn-outline-info">Create</button> 
+    </form>
+    <a href="/dojos" class="text-decoration-none" >Home</a>
+    </div>
+</body>
+</html>
